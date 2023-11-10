@@ -15,4 +15,4 @@ y_pred = model.predict(X_test)
 result = accuracy_score(y_test, y_pred)
 
 with open('results.txt', 'w') as f:
-    f.write("Model Accuracy: ", result)
+    f.write("Model Accuracy: " + result)
