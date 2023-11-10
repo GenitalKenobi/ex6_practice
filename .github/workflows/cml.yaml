@@ -1,4 +1,4 @@
-name: ex6_practice
+name: ex_6 practice
 on: [push]
 jobs:
   run:
@@ -17,5 +17,3 @@ jobs:
         run: |
           cat results.txt >> results.md
           cml comment create results.md
-
-      
