@@ -1,0 +1,20 @@
+name: ex6_practice
+on: [push]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    container: ghcr.io/iterative/cml:0-dvc2-base1
+    steps:
+      - uses: actions/checkout@v3
+      - uses: iterative/setup-cml@v1
+      run: |
+        pip install scikit-learn
+        python train.py
+      - name: Write CML Report
+        env:
+          REPO_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          cat results.txt >> results.md
+          cml comment create results.md
+
+      
