@@ -15,5 +15,5 @@ jobs:
         env:
           REPO_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
-          cat results.txt >> results.md
-          cml comment create results.md
+          cat result.txt >> result.md
+          cml comment create result.md
